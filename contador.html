@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f0f0; /* Color de fondo */
+        }
+
+        /* Estilo del título */
+        h1 {
+            color: #333;
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        /* Estilo del contador */
+        .counter {
+            font-size: 48px;
+            margin: 20px;
+            color: #007BFF; /* Color azul para el contador */
+            padding: 10px;
+            border: 2px solid #007BFF; /* Borde azul */
+            border-radius: 10px; /* Bordes redondeados */
+            background-color: white; /* Fondo blanco */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+        }
+
+        /* Estilo de los botones */
+        button {
+            padding: 15px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px; /* Bordes redondeados */
+            transition: background-color 0.3s; /* Transición suave */
+        }
+
+        button.sumar {
+            background-color: #28a745; /* Color verde */
+            color: white;
+        }
+
+        button.sumar:hover {
+            background-color: #218838; /* Color verde más oscuro al pasar el ratón */
+        }
+
+        button.restar {
+            background-color: #dc3545; /* Color rojo */
+            color: white;
+        }
+
+        button.restar:hover {
+            background-color: #c82333; /* Color rojo más oscuro al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Contador</h1>
+    <div class="counter" id="counter">0</div>
+    <button class="sumar" id="sumar-btn">Sumar</button>
+    <button class="restar" id="restar-btn">Restar</button>
+
+    <script>
+        let counterValue = 0; // Valor inicial del contador
+
+        const counterDisplay = document.getElementById('counter');
+        const sumarBtn = document.getElementById('sumar-btn');
+        const restarBtn = document.getElementById('restar-btn');
+
+        // Función para actualizar el contador en el DOM
+        function updateCounter() {
+            counterDisplay.textContent = counterValue;
+        }
+
+        // Evento para el botón de sumar
+        sumarBtn.addEventListener('click', () => {
+            counterValue++;
+            updateCounter();
+        });
+
+        // Evento para el botón de restar
+        restarBtn.addEventListener('click', () => {
+            counterValue--;
+            updateCounter();
+        });
+    </script>
+
+</body>
+</html>
